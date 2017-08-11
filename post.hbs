@@ -30,7 +30,12 @@ into the {body} of the default.hbs template --}}
 
           {{content}}
 
+          <div class="spacer-post"></div>
+          {{> "post-social-icons"}}
+          <div class="spacer-post"></div>
+
           <div class="post-card-tags-cloud">
+            <h3>Tags</h3>
             {{#foreach tags}}
               <span class="post-card-tags">
                 <a class="post-card-tags" href="{{url}}">{{name}}</a>
@@ -64,20 +69,19 @@ into the {body} of the default.hbs template --}}
 
         <section class="post-full-comments">
           <div id="disqus_thread"></div>
-          <script>
-            var disqus_config = function() {
-              this.page.url = '{{url absolute="true"}}';
-              this.page.identifier = 'ghost-{{comment_id}}';
-            };
-            (function() {
-              var d = document,
-                s = d.createElement('script');
-              s.src = 'https://danielleightley.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
-            })();
+          <script type="text/javascript">
+          var disqus_shortname = 'danielleightley'; // required: replace example with your forum shortname
+          var disqus_identifier = '{{post.id}}';
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
           </script>
           <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </section>
       </article>
     </div>

@@ -584,7 +584,7 @@ a.about-more {
 }
 
 .post-full-image {
-  margin: 0 -15vw -95px;
+  margin: 0 0 -95px 0;
   height: 450px;
   background: #000;
   background-size: cover;

@@ -1,0 +1,26 @@
+{
+  "short_name": "Dan Leightley Blog App",
+  "name": "Leightley: Researcher, Cyclist and Blogger",
+  "icons": [
+    {
+      "src": "launcher-icon-leightley-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "launcher-icon-leightley-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "launcher-icon-leightley-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=web_app_manifest",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#488aff",
+  "theme_color": "#488aff"
+}

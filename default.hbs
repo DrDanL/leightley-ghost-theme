@@ -5,6 +5,8 @@
     {{!-- Document Settings --}}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="/manifest.json">
 
     {{!-- Base Meta --}}
     <title>{{meta_title}}: Daniel Leightley</title>
@@ -50,6 +52,7 @@
         crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "/service-worker-manager.js"}}"></script>
 
     {{#if pagination.pages}}
     <script>

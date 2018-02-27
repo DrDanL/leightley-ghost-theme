@@ -12,9 +12,9 @@
 	var staticVendorCacheName = 'static-vendor' + cacheVersion;
 	var staticAssetsCacheName = 'static-assets' + cacheVersion;
 	var contentCacheName = 'content' + cacheVersion;
-	var maxEntries = 50;
+	var maxEntries = 30;
 
-	self.importScripts('assets/dist/sw-toolbox.js');
+	self.importScripts('/assets/dist/sw-toolbox.js');
 
 	self.toolbox.options.debug = false;
 

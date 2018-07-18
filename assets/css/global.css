@@ -412,7 +412,7 @@ blockquote cite a {
 
 a {
     color: color(var(--blue) l(-5%));
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:hover {

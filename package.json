@@ -1,43 +1,65 @@
 {
-  "name": "leightley-ghost-theme",
-  "description": "Theme for Leightley.com based on Casper.",
-  "demo": "https://www.leightley.com",
-  "version": "0.1.5",
-  "engines": {
-    "ghost": ">=1.0.0"
-  },
-  "license": "MIT",
+  "name": "leightley-theme",
+  "version": "1.1.0",
+  "description": "Leightley theme",
   "author": {
     "name": "Daniel Leightley",
-    "email": "dleightley@ieee.org",
-    "url": "https://www.leightley.com"
+    "email": "dan.l@outlook.com"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "config": {
+    "posts_per_page": 12
+  },
+  "engines": {
+    "ghost": ">=1.0.0"
   },
   "gpm": {
     "type": "theme",
     "categories": [
+      "Personal Blog",
       "Minimal",
-      "Magazine"
+      "Clean"
     ]
   },
-  "keywords": [
-    "ghost",
-    "theme"
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/DrDanL/leightley-ghost-theme.git"
+    "url": ""
   },
-  "bugs": "https://github.com/DrDanL/leightley-ghost-theme/issues",
-  "contributors": "https://github.com/DrDanL/leightley-ghost-theme/graphs/contributors",
   "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "cssnano": "^3.10.0",
+    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
-     "gulp-merge-media-queries": "^0.2.0",
-     "gulp-concat": "^2.6.0",
-     "gulp-cssmin": "^0.1.7",
-     "gulp-rename": "^1.2.2",
-     "gulp-uglify": "^1.5.3"
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "path": "^0.12.7",
+    "pixrem": "^4.0.1",
+    "postcss-color-rgba-fallback": "^3.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-opacity": "^4.0.0",
+    "postcss-pseudoelements": "^5.0.0",
+    "postcss-vmin": "^3.0.0",
+    "postcss-will-change": "^2.0.0",
+    "postcss-zindex": "^2.2.0"
   },
-  "config": {
-    "posts_per_page": 10
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "feather-icons": "^4.7.3",
+    "fitvids": "^2.0.0",
+    "lunr": "^2.2.1",
+    "npm": "^6.1.0",
+    "vanilla-lazyload": "^8.7.1"
   }
 }

@@ -1,52 +1,37 @@
 {{!< default}}
 
 {{#author}}
-{{!-- Everything inside the #author tags pulls data from the author --}}
-<header class="site-header outer {{#if cover_image}}" style="background-image: url({{cover_image}}){{else}}no-cover{{/if}}">
-    <div class="inner">
-        <div class="site-header-content">
-            {{#if profile_image}}
-                <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-            {{/if}}
-            <h1 class="site-title">{{name}}</h1>
-            {{#if bio}}
-                <h2 class="author-bio">{{bio}}</h2>
-            {{/if}}
-            <div class="author-meta">
-                {{#if location}}
-                    <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
-                {{/if}}
-                <div class="author-stats">
-                    {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <span class="bull">&bull;</span>
-                </div>
-                {{#if website}}
-                    <a class="social-link social-link-wb" href="{{website}}" target="_blank">{{> "icons/website"}}</a>
-                {{/if}}
-                {{#if twitter}}
-                    <a class="social-link social-link-tw" href="{{twitter_url}}" target="_blank">{{> "icons/twitter"}}</a>
-                {{/if}}
-                {{#if facebook}}
-                    <a class="social-link social-link-fb" href="{{facebook_url}}" target="_blank">{{> "icons/facebook"}}</a>
-                {{/if}}
-                <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{url absolute="true"}}/rss/" target="_blank">{{> "icons/rss"}}</a>
-            </div>
-        </div>
+  <section class="hero background-img is-large" style="background-image: url('{{cover_image}}')">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        {{#if profile_image}}
+          <figure class="author-image image is-128x128" style="background-image: url({{img_url profile_image}})">
+            <img src="">
+          </figure>
+        {{/if}}
+        <h1 class="title has-text-white is-size-1 has-text-weight-bold">
+          {{name}}
+        </h1>
+        <h2 class="subtitle has-text-white">
+          {{description}}
+        </h2>
+      </div>
     </div>
-</header>
+  </section>
 {{/author}}
 
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-
-        <div class="post-feed">
-            {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-            {{/foreach}}
+<section class="posts">
+  <div class="container">
+    {{!-- Latest Posts --}}
+    <div class="columns is-multiline">
+      {{#foreach posts }}
+        <div class="column is-12-mobile is-6-tablet is-4-widescreen is-6-desktop">
+          {{> post-card class="bottom-border"}}
         </div>
-
+      {{/foreach}}
     </div>
-</main>
+
+    {{pagination}}
+  </div>
+</section>

@@ -1,49 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-
+<html lang="{{lang}}">
+  <head>
     {{!-- Document Settings --}}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="/manifest.json">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    {{!-- Base Meta --}}
-    <title>{{meta_title}}: Daniel Leightley</title>
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+
+    {{!-- Mobile Meta --}}
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{! Place favicon.ico in the asset directory }}
-    <link rel="shortcut icon" href="{{asset "/favicon.ico"}}">
-
     {{!-- Styles'n'Scripts --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset 'css/app.min.css'}}" />
 
-    {{!-- Helper files--}}
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    {{!-- This tag outputes SEO meta+structured data and other important settings --}}
+    {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
+  </head>
+  <body class="{{body_class}}">
 
-</head>
-<body class="{{body_class}}">
-
-    <div class="site-wrapper">
-      <header class="site-header outer">
-          <div class="inner">
-              {{> "site-nav"}}
-          </div>
-      </header>
-
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
-
-        {{!-- Main text footer --}}
-        {{> "footer-main"}}
+    {{!-- Icons --}}
+    <div class="is-hidden">
+      {{> icon-sprite}}
     </div>
 
-    {{!-- Footer subscribe element --}}
-    {{> "overlay-subscribe"}}
+    {{> header}}
+
+    <main class="main">
+      {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+      {{{body}}}
+    </main>
+
+    {{!-- The footer at the very bottom --}}
+    {{> footer}}
+
+    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{ghost_foot}}
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
     <script
@@ -54,18 +47,13 @@
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="/service-worker-manager.js"></script>
 
-    {{#if pagination.pages}}
+    {{!-- Global variables --}}
     <script>
-        var maxPages = parseInt('{{pagination.pages}}');
+      // Disqus shortname
+      var disqus_shortname = 'danielleightley';
     </script>
-    <script src="{{asset "js/infinitescroll.js"}}"></script>
-    {{/if}}
 
-    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
-    {{{block "scripts"}}}
-
-    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
-    {{ghost_foot}}
-
-</body>
+    {{!-- Main theme scripts --}}
+    <script async src="{{asset 'js/app.min.js'}}"></script>
+  </body>
 </html>

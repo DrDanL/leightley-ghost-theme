@@ -12762,6 +12762,12 @@ pre[class*=language-] {
     background-color: #fafafa;
 }
 
+@media only screen and (max-width: 600px) {
+  .page,
+  .post {
+      padding: 1em
+  }
+}
 /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
 Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 
